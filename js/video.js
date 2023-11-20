@@ -64,7 +64,10 @@ document.querySelector("#mute").addEventListener("click", function() {
 document.querySelector("#slider").addEventListener("input", function() {
     console.log("Change Volume");
     video.volume = this.value / 100;
-    updateVolumeInfo();
+    
+    let volumeInfo = document.getElementById("volume");
+    volumeInfo.textContent = (video.muted ? "Muted" : video.volume * 100) + "%";
+    
     console.log(document.querySelector("#volume"))
 });
 
