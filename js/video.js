@@ -65,6 +65,7 @@ document.querySelector("#slider").addEventListener("input", function() {
     console.log("Change Volume");
     video.volume = this.value / 100;
     updateVolumeInfo();
+    console.log(document.querySelector("#volume"))
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {
@@ -79,5 +80,5 @@ document.querySelector("#orig").addEventListener("click", function() {
 
 function updateVolumeInfo() {
     let volumeInfo = document.getElementById("volume");
-    volumeInfo.textContent = (video.muted ? "Muted" : video.volume * 100).toFixed(0) + "%";
+    volumeInfo.textContent = (video.muted ? "Muted" : video.volume * 100) + "%";
 }
