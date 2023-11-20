@@ -9,7 +9,7 @@
 // 	console.log("Play Video");
 // });
 
-var video;
+let video;
 
 window.addEventListener("load", function() {
     console.log("Good job opening the window");
@@ -23,7 +23,7 @@ window.addEventListener("load", function() {
 document.querySelector("#play").addEventListener("click", function() {
     console.log("Play Video");
     video.play();
-    // updateVolumeInfo();
+    updateVolumeInfo();
 });
 
 document.querySelector("#pause").addEventListener("click", function() {
@@ -35,14 +35,14 @@ document.querySelector("#slower").addEventListener("click", function() {
     console.log("Slow Down");
     video.playbackRate -= 0.1;
     console.log("New Speed: " + video.playbackRate.toFixed(2));
-    // updateVolumeInfo();
+    updateVolumeInfo();
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
     console.log("Speed Up");
     video.playbackRate += 0.1;
     console.log("New Speed: " + video.playbackRate.toFixed(2));
-    // updateVolumeInfo();
+    updateVolumeInfo();
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
@@ -58,13 +58,13 @@ document.querySelector("#mute").addEventListener("click", function() {
     console.log("Mute/Unmute Video");
     video.muted = !video.muted;
     this.textContent = video.muted ? "Unmute" : "Mute";
-    // updateVolumeInfo();
+    updateVolumeInfo();
 });
 
 document.querySelector("#slider").addEventListener("input", function() {
     console.log("Change Volume");
     video.volume = this.value / 100;
-    // updateVolumeInfo();
+    updateVolumeInfo();
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {
@@ -77,7 +77,7 @@ document.querySelector("#orig").addEventListener("click", function() {
     video.classList.remove("oldSchool");
 });
 
-// function updateVolumeInfo() {
-//     var volumeInfo = document.getElementById("volume");
-//     volumeInfo.textContent = (video.muted ? "Muted" : video.volume * 100).toFixed(0) + "%";
-// }
+function updateVolumeInfo() {
+    let volumeInfo = document.getElementById("volume");
+    volumeInfo.textContent = (video.muted ? "Muted" : video.volume * 100).toFixed(0) + "%";
+}
