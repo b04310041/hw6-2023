@@ -66,7 +66,7 @@ document.querySelector("#slider").addEventListener("input", function() {
     video.volume = this.value / 100;
     
     let volumeInfo = document.getElementById("volume");
-    volumeInfo.textContent = (video.muted ? "Muted" : video.volume * 100) + "%";
+    volumeInfo.textContent = (video.volume * 100) + "%";
     
     console.log(document.querySelector("#volume"))
 });
@@ -83,5 +83,5 @@ document.querySelector("#orig").addEventListener("click", function() {
 
 function updateVolumeInfo() {
     let volumeInfo = document.getElementById("volume");
-    volumeInfo.textContent = (video.muted ? "Muted" : video.volume * 100) + "%";
+    volumeInfo.textContent = (video.volume * 100) + "%";
 }
